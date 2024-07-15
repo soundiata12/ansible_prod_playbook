@@ -1,0 +1,10 @@
+---
+- hosts: webserver
+  become: 1 
+  tasks:
+     - name: Package Install
+       yum:
+         name: ["wget", "curl", "httpd"]
+         state: present
+
+

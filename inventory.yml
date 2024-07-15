@@ -1,7 +1,8 @@
+[webserver]
 192.168.176.131
 192.168.176.133
-[dev-server]
 
 
+[dbserver]
 192.168.176.128
-[db-server]
+

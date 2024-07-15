@@ -1,0 +1,1367 @@
+2024-07-13 13:20:10,044 p=20230 u=root n=ansible | 192.168.176.128 | CHANGED | rc=0 >>
+john:x:1001:1001:goodman:/home/john:/bin/sh
+
+2024-07-13 14:04:50,302 p=20471 u=root n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/root/ansible_prod_playbook/play_prod1.yml': line 6, column 15, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: Install nginx
+       package:
+              ^ here
+
+2024-07-13 14:04:59,221 p=20474 u=root n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/root/ansible_prod_playbook/play_prod1.yml': line 6, column 15, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: Install nginx
+       package:
+              ^ here
+
+2024-07-13 14:08:55,332 p=20481 u=root n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/root/ansible_prod_playbook/play_prod1.yml': line 6, column 15, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: Install nginx
+       package:
+              ^ here
+
+2024-07-13 14:10:59,676 p=20485 u=root n=ansible | PLAY [all] **********************************************************************************************************************************************************************************
+2024-07-13 14:10:59,695 p=20485 u=root n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************
+2024-07-13 14:11:04,052 p=20485 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 14:11:04,293 p=20485 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 14:11:04,726 p=20485 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 14:11:04,820 p=20485 u=root n=ansible | TASK [Install nginx] ************************************************************************************************************************************************************************
+2024-07-13 14:11:18,984 p=20485 u=root n=ansible | changed: [192.168.176.128]
+2024-07-13 14:11:19,820 p=20485 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 14:11:20,724 p=20485 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 14:11:20,744 p=20485 u=root n=ansible | TASK [Create user serge] ********************************************************************************************************************************************************************
+2024-07-13 14:11:22,588 p=20485 u=root n=ansible | changed: [192.168.176.128]
+2024-07-13 14:11:22,959 p=20485 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 14:11:24,297 p=20485 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 14:11:24,319 p=20485 u=root n=ansible | TASK [Create group] *************************************************************************************************************************************************************************
+2024-07-13 14:11:25,917 p=20485 u=root n=ansible | changed: [192.168.176.128]
+2024-07-13 14:11:26,363 p=20485 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 14:11:27,419 p=20485 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 14:11:27,441 p=20485 u=root n=ansible | TASK [Install httpd] ************************************************************************************************************************************************************************
+2024-07-13 14:11:30,437 p=20485 u=root n=ansible | fatal: [192.168.176.128]: FAILED! => {"cache_update_time": 1720886826, "cache_updated": false, "changed": false, "msg": "'/usr/bin/apt-get -y -o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"       install 'httpd'' failed: E: Package 'httpd' has no installation candidate\n", "rc": 100, "stderr": "E: Package 'httpd' has no installation candidate\n", "stderr_lines": ["E: Package 'httpd' has no installation candidate"], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nPackage httpd is a virtual package provided by:\n  apache2 2.4.58-1ubuntu8.3\n  yaws 2.1.1+dfsg-2\n  webfs 1.21+ds1-12build3\n  tntnet 3.0-3.1build1\n  mini-httpd 1.30-8build2\n  micro-httpd 20140814-2.1\n  merecat 2.31+git20220513+ds-4.1build2\n  lighttpd 1.4.74-1ubuntu3\n  nginx 1.24.0-2ubuntu7\n\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "Package httpd is a virtual package provided by:", "  apache2 2.4.58-1ubuntu8.3", "  yaws 2.1.1+dfsg-2", "  webfs 1.21+ds1-12build3", "  tntnet 3.0-3.1build1", "  mini-httpd 1.30-8build2", "  micro-httpd 20140814-2.1", "  merecat 2.31+git20220513+ds-4.1build2", "  lighttpd 1.4.74-1ubuntu3", "  nginx 1.24.0-2ubuntu7", ""]}
+2024-07-13 14:11:41,789 p=20485 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 14:11:45,811 p=20485 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 14:11:45,830 p=20485 u=root n=ansible | TASK [Create index file] ********************************************************************************************************************************************************************
+2024-07-13 14:11:47,587 p=20485 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 14:11:48,734 p=20485 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 14:11:48,755 p=20485 u=root n=ansible | TASK [Create directory] *********************************************************************************************************************************************************************
+2024-07-13 14:11:50,458 p=20485 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 14:11:51,604 p=20485 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 14:11:51,698 p=20485 u=root n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************
+2024-07-13 14:11:51,699 p=20485 u=root n=ansible | 192.168.176.128            : ok=4    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-07-13 14:11:51,700 p=20485 u=root n=ansible | 192.168.176.131            : ok=7    changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-07-13 14:11:51,701 p=20485 u=root n=ansible | 192.168.176.133            : ok=7    changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-07-13 14:49:29,897 p=20725 u=root n=ansible | 192.168.176.128 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.176.128"
+        ],
+        "ansible_all_ipv6_addresses": [
+            "fe80::20c:29ff:fed6:6116"
+        ],
+        "ansible_apparmor": {
+            "status": "enabled"
+        },
+        "ansible_architecture": "x86_64",
+        "ansible_bios_date": "11/12/2020",
+        "ansible_bios_vendor": "Phoenix Technologies LTD",
+        "ansible_bios_version": "6.00",
+        "ansible_board_asset_tag": "NA",
+        "ansible_board_name": "440BX Desktop Reference Platform",
+        "ansible_board_serial": "None",
+        "ansible_board_vendor": "Intel Corporation",
+        "ansible_board_version": "None",
+        "ansible_chassis_asset_tag": "No Asset Tag",
+        "ansible_chassis_serial": "None",
+        "ansible_chassis_vendor": "No Enclosure",
+        "ansible_chassis_version": "N/A",
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-6.8.0-36-generic",
+            "quiet": true,
+            "ro": true,
+            "root": "UUID=b1bd9b24-5311-4d10-9488-6706cecee003",
+            "splash": true
+        },
+        "ansible_date_time": {
+            "date": "2024-07-13",
+            "day": "13",
+            "epoch": "1720896569",
+            "epoch_int": "1720896569",
+            "hour": "14",
+            "iso8601": "2024-07-13T18:49:29Z",
+            "iso8601_basic": "20240713T144929056324",
+            "iso8601_basic_short": "20240713T144929",
+            "iso8601_micro": "2024-07-13T18:49:29.056324Z",
+            "minute": "49",
+            "month": "07",
+            "second": "29",
+            "time": "14:49:29",
+            "tz": "EDT",
+            "tz_dst": "EDT",
+            "tz_offset": "-0400",
+            "weekday": "Saturday",
+            "weekday_number": "6",
+            "weeknumber": "28",
+            "year": "2024"
+        },
+        "ansible_default_ipv4": {
+            "address": "192.168.176.128",
+            "alias": "ens33",
+            "broadcast": "192.168.176.255",
+            "gateway": "192.168.176.2",
+            "interface": "ens33",
+            "macaddress": "00:0c:29:d6:61:16",
+            "mtu": 1500,
+            "netmask": "255.255.255.0",
+            "network": "192.168.176.0",
+            "prefix": "24",
+            "type": "ether"
+        },
+        "ansible_default_ipv6": {},
+        "ansible_device_links": {
+            "ids": {
+                "sr0": [
+                    "ata-VMware_Virtual_SATA_CDRW_Drive_01000000000000000001"
+                ]
+            },
+            "labels": {
+                "sr0": [
+                    "Ubuntu\\x2024.04\\x20LTS\\x20amd64"
+                ]
+            },
+            "masters": {},
+            "uuids": {
+                "sda2": [
+                    "b1bd9b24-5311-4d10-9488-6706cecee003"
+                ],
+                "sr0": [
+                    "2024-04-24-11-29-09-00"
+                ]
+            }
+        },
+        "ansible_devices": {
+            "loop0": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "8",
+                "sectorsize": "512",
+                "size": "4.00 KB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop1": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "152040",
+                "sectorsize": "512",
+                "size": "74.24 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop10": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop2": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "21952",
+                "sectorsize": "512",
+                "size": "10.72 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop3": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "552192",
+                "sectorsize": "512",
+                "size": "269.62 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop4": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "21136",
+                "sectorsize": "512",
+                "size": "10.32 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop5": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "1034424",
+                "sectorsize": "512",
+                "size": "505.09 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop6": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "79328",
+                "sectorsize": "512",
+                "size": "38.73 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop7": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "187776",
+                "sectorsize": "512",
+                "size": "91.69 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop8": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "79520",
+                "sectorsize": "512",
+                "size": "38.83 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop9": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "952",
+                "sectorsize": "512",
+                "size": "476.00 KB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "sda": {
+                "holders": [],
+                "host": "SCSI storage controller: Broadcom / LSI 53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI (rev 01)",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": "VMware Virtual S",
+                "partitions": {
+                    "sda1": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": []
+                        },
+                        "sectors": "2048",
+                        "sectorsize": 512,
+                        "size": "1.00 MB",
+                        "start": "2048",
+                        "uuid": null
+                    },
+                    "sda2": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": [
+                                "b1bd9b24-5311-4d10-9488-6706cecee003"
+                            ]
+                        },
+                        "sectors": "41936896",
+                        "sectorsize": 512,
+                        "size": "20.00 GB",
+                        "start": "4096",
+                        "uuid": "b1bd9b24-5311-4d10-9488-6706cecee003"
+                    }
+                },
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "41943040",
+                "sectorsize": "512",
+                "size": "20.00 GB",
+                "support_discard": "512",
+                "vendor": "VMware,",
+                "virtual": 1
+            },
+            "sr0": {
+                "holders": [],
+                "host": "SATA controller: VMware SATA AHCI controller",
+                "links": {
+                    "ids": [
+                        "ata-VMware_Virtual_SATA_CDRW_Drive_01000000000000000001"
+                    ],
+                    "labels": [
+                        "Ubuntu\\x2024.04\\x20LTS\\x20amd64"
+                    ],
+                    "masters": [],
+                    "uuids": [
+                        "2024-04-24-11-29-09-00"
+                    ]
+                },
+                "model": "VMware SATA CD01",
+                "partitions": {},
+                "removable": "1",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "11942688",
+                "sectorsize": "2048",
+                "size": "5.69 GB",
+                "support_discard": "2048",
+                "vendor": "NECVMWar",
+                "virtual": 1
+            }
+        },
+        "ansible_distribution": "Ubuntu",
+        "ansible_distribution_file_parsed": true,
+        "ansible_distribution_file_path": "/etc/os-release",
+        "ansible_distribution_file_variety": "Debian",
+        "ansible_distribution_major_version": "24",
+        "ansible_distribution_release": "noble",
+        "ansible_distribution_version": "24.04",
+        "ansible_dns": {
+            "nameservers": [
+                "127.0.0.53"
+            ],
+            "options": {
+                "edns0": true,
+                "trust-ad": true
+            },
+            "search": [
+                "localdomain"
+            ]
+        },
+        "ansible_domain": "",
+        "ansible_effective_group_id": 0,
+        "ansible_effective_user_id": 0,
+        "ansible_ens33": {
+            "active": true,
+            "device": "ens33",
+            "features": {
+                "esp_hw_offload": "off [fixed]",
+                "esp_tx_csum_hw_offload": "off [fixed]",
+                "fcoe_mtu": "off [fixed]",
+                "generic_receive_offload": "on",
+                "generic_segmentation_offload": "on",
+                "highdma": "off [fixed]",
+                "hsr_dup_offload": "off [fixed]",
+                "hsr_fwd_offload": "off [fixed]",
+                "hsr_tag_ins_offload": "off [fixed]",
+                "hsr_tag_rm_offload": "off [fixed]",
+                "hw_tc_offload": "off [fixed]",
+                "l2_fwd_offload": "off [fixed]",
+                "large_receive_offload": "off [fixed]",
+                "loopback": "off [fixed]",
+                "macsec_hw_offload": "off [fixed]",
+                "netns_local": "off [fixed]",
+                "ntuple_filters": "off [fixed]",
+                "receive_hashing": "off [fixed]",
+                "rx_all": "off",
+                "rx_checksumming": "off",
+                "rx_fcs": "off",
+                "rx_gro_hw": "off [fixed]",
+                "rx_gro_list": "off",
+                "rx_udp_gro_forwarding": "off",
+                "rx_udp_tunnel_port_offload": "off [fixed]",
+                "rx_vlan_filter": "on [fixed]",
+                "rx_vlan_offload": "on",
+                "rx_vlan_stag_filter": "off [fixed]",
+                "rx_vlan_stag_hw_parse": "off [fixed]",
+                "scatter_gather": "on",
+                "tcp_segmentation_offload": "on",
+                "tls_hw_record": "off [fixed]",
+                "tls_hw_rx_offload": "off [fixed]",
+                "tls_hw_tx_offload": "off [fixed]",
+                "tx_checksum_fcoe_crc": "off [fixed]",
+                "tx_checksum_ip_generic": "on",
+                "tx_checksum_ipv4": "off [fixed]",
+                "tx_checksum_ipv6": "off [fixed]",
+                "tx_checksum_sctp": "off [fixed]",
+                "tx_checksumming": "on",
+                "tx_esp_segmentation": "off [fixed]",
+                "tx_fcoe_segmentation": "off [fixed]",
+                "tx_gre_csum_segmentation": "off [fixed]",
+                "tx_gre_segmentation": "off [fixed]",
+                "tx_gso_list": "off [fixed]",
+                "tx_gso_partial": "off [fixed]",
+                "tx_gso_robust": "off [fixed]",
+                "tx_ipxip4_segmentation": "off [fixed]",
+                "tx_ipxip6_segmentation": "off [fixed]",
+                "tx_lockless": "off [fixed]",
+                "tx_nocache_copy": "off",
+                "tx_scatter_gather": "on",
+                "tx_scatter_gather_fraglist": "off [fixed]",
+                "tx_sctp_segmentation": "off [fixed]",
+                "tx_tcp6_segmentation": "off [fixed]",
+                "tx_tcp_ecn_segmentation": "off [fixed]",
+                "tx_tcp_mangleid_segmentation": "off",
+                "tx_tcp_segmentation": "on",
+                "tx_tunnel_remcsum_segmentation": "off [fixed]",
+                "tx_udp_segmentation": "off [fixed]",
+                "tx_udp_tnl_csum_segmentation": "off [fixed]",
+                "tx_udp_tnl_segmentation": "off [fixed]",
+                "tx_vlan_offload": "on [fixed]",
+                "tx_vlan_stag_hw_insert": "off [fixed]",
+                "vlan_challenged": "off [fixed]"
+            },
+            "hw_timestamp_filters": [],
+            "ipv4": {
+                "address": "192.168.176.128",
+                "broadcast": "192.168.176.255",
+                "netmask": "255.255.255.0",
+                "network": "192.168.176.0",
+                "prefix": "24"
+            },
+            "ipv6": [
+                {
+                    "address": "fe80::20c:29ff:fed6:6116",
+                    "prefix": "64",
+                    "scope": "link"
+                }
+            ],
+            "macaddress": "00:0c:29:d6:61:16",
+            "module": "e1000",
+            "mtu": 1500,
+            "pciid": "0000:02:01.0",
+            "promisc": false,
+            "speed": 1000,
+            "timestamping": [],
+            "type": "ether"
+        },
+        "ansible_env": {
+            "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+            "HOME": "/root",
+            "LANG": "en_US.UTF-8",
+            "LOGNAME": "root",
+            "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+            "PWD": "/root",
+            "SHELL": "/bin/bash",
+            "SHLVL": "0",
+            "SSH_CLIENT": "192.168.176.130 54094 22",
+            "SSH_CONNECTION": "192.168.176.130 54094 192.168.176.128 22",
+            "SSH_TTY": "/dev/pts/2",
+            "TERM": "xterm",
+            "USER": "root",
+            "XDG_RUNTIME_DIR": "/run/user/0",
+            "XDG_SESSION_CLASS": "user",
+            "XDG_SESSION_ID": "153",
+            "XDG_SESSION_TYPE": "tty",
+            "_": "/bin/sh"
+        },
+        "ansible_fibre_channel_wwn": [],
+        "ansible_fips": false,
+        "ansible_form_factor": "Other",
+        "ansible_fqdn": "mohamed-keita-VMware-Virtual-Platform",
+        "ansible_hostname": "mohamed-keita-VMware-Virtual-Platform",
+        "ansible_hostnqn": "",
+        "ansible_interfaces": [
+            "lo",
+            "ens33"
+        ],
+        "ansible_is_chroot": false,
+        "ansible_iscsi_iqn": "",
+        "ansible_kernel": "6.8.0-36-generic",
+        "ansible_kernel_version": "#36-Ubuntu SMP PREEMPT_DYNAMIC Mon Jun 10 10:49:14 UTC 2024",
+        "ansible_lo": {
+            "active": true,
+            "device": "lo",
+            "features": {
+                "esp_hw_offload": "off [fixed]",
+                "esp_tx_csum_hw_offload": "off [fixed]",
+                "fcoe_mtu": "off [fixed]",
+                "generic_receive_offload": "on",
+                "generic_segmentation_offload": "on",
+                "highdma": "on [fixed]",
+                "hsr_dup_offload": "off [fixed]",
+                "hsr_fwd_offload": "off [fixed]",
+                "hsr_tag_ins_offload": "off [fixed]",
+                "hsr_tag_rm_offload": "off [fixed]",
+                "hw_tc_offload": "off [fixed]",
+                "l2_fwd_offload": "off [fixed]",
+                "large_receive_offload": "off [fixed]",
+                "loopback": "on [fixed]",
+                "macsec_hw_offload": "off [fixed]",
+                "netns_local": "on [fixed]",
+                "ntuple_filters": "off [fixed]",
+                "receive_hashing": "off [fixed]",
+                "rx_all": "off [fixed]",
+                "rx_checksumming": "on [fixed]",
+                "rx_fcs": "off [fixed]",
+                "rx_gro_hw": "off [fixed]",
+                "rx_gro_list": "off",
+                "rx_udp_gro_forwarding": "off",
+                "rx_udp_tunnel_port_offload": "off [fixed]",
+                "rx_vlan_filter": "off [fixed]",
+                "rx_vlan_offload": "off [fixed]",
+                "rx_vlan_stag_filter": "off [fixed]",
+                "rx_vlan_stag_hw_parse": "off [fixed]",
+                "scatter_gather": "on",
+                "tcp_segmentation_offload": "on",
+                "tls_hw_record": "off [fixed]",
+                "tls_hw_rx_offload": "off [fixed]",
+                "tls_hw_tx_offload": "off [fixed]",
+                "tx_checksum_fcoe_crc": "off [fixed]",
+                "tx_checksum_ip_generic": "on [fixed]",
+                "tx_checksum_ipv4": "off [fixed]",
+                "tx_checksum_ipv6": "off [fixed]",
+                "tx_checksum_sctp": "on [fixed]",
+                "tx_checksumming": "on",
+                "tx_esp_segmentation": "off [fixed]",
+                "tx_fcoe_segmentation": "off [fixed]",
+                "tx_gre_csum_segmentation": "off [fixed]",
+                "tx_gre_segmentation": "off [fixed]",
+                "tx_gso_list": "on",
+                "tx_gso_partial": "off [fixed]",
+                "tx_gso_robust": "off [fixed]",
+                "tx_ipxip4_segmentation": "off [fixed]",
+                "tx_ipxip6_segmentation": "off [fixed]",
+                "tx_lockless": "on [fixed]",
+                "tx_nocache_copy": "off [fixed]",
+                "tx_scatter_gather": "on [fixed]",
+                "tx_scatter_gather_fraglist": "on [fixed]",
+                "tx_sctp_segmentation": "on",
+                "tx_tcp6_segmentation": "on",
+                "tx_tcp_ecn_segmentation": "on",
+                "tx_tcp_mangleid_segmentation": "on",
+                "tx_tcp_segmentation": "on",
+                "tx_tunnel_remcsum_segmentation": "off [fixed]",
+                "tx_udp_segmentation": "on",
+                "tx_udp_tnl_csum_segmentation": "off [fixed]",
+                "tx_udp_tnl_segmentation": "off [fixed]",
+                "tx_vlan_offload": "off [fixed]",
+                "tx_vlan_stag_hw_insert": "off [fixed]",
+                "vlan_challenged": "on [fixed]"
+            },
+            "hw_timestamp_filters": [],
+            "ipv4": {
+                "address": "127.0.0.1",
+                "broadcast": "",
+                "netmask": "255.0.0.0",
+                "network": "127.0.0.0",
+                "prefix": "8"
+            },
+            "ipv6": [
+                {
+                    "address": "::1",
+                    "prefix": "128",
+                    "scope": "host"
+                }
+            ],
+            "mtu": 65536,
+            "promisc": false,
+            "timestamping": [],
+            "type": "loopback"
+        },
+        "ansible_loadavg": {
+            "15m": 0.20751953125,
+            "1m": 0.05078125,
+            "5m": 0.32666015625
+        },
+        "ansible_local": {},
+        "ansible_lsb": {
+            "codename": "noble",
+            "description": "Ubuntu 24.04 LTS",
+            "id": "Ubuntu",
+            "major_release": "24",
+            "release": "24.04"
+        },
+        "ansible_lvm": "N/A",
+        "ansible_machine": "x86_64",
+        "ansible_machine_id": "e5991bd1dc424bb6a2be5cf528460f2f",
+        "ansible_memfree_mb": 304,
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 2532,
+                "used": 1336
+            },
+            "real": {
+                "free": 304,
+                "total": 3868,
+                "used": 3564
+            },
+            "swap": {
+                "cached": 0,
+                "free": 3776,
+                "total": 3776,
+                "used": 0
+            }
+        },
+        "ansible_memtotal_mb": 3868,
+        "ansible_mounts": [
+            {
+                "block_available": 2208000,
+                "block_size": 4096,
+                "block_total": 5115796,
+                "block_used": 2907796,
+                "device": "/dev/sda2",
+                "fstype": "ext4",
+                "inode_available": 1096905,
+                "inode_total": 1310720,
+                "inode_used": 213815,
+                "mount": "/",
+                "options": "rw,relatime",
+                "size_available": 9043968000,
+                "size_total": 20954300416,
+                "uuid": "b1bd9b24-5311-4d10-9488-6706cecee003"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 1,
+                "block_used": 1,
+                "device": "/dev/loop0",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 29,
+                "inode_used": 29,
+                "mount": "/snap/bare/5",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 131072,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 594,
+                "block_used": 594,
+                "device": "/dev/loop1",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 14458,
+                "inode_used": 14458,
+                "mount": "/snap/core22/1380",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 77856768,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 86,
+                "block_used": 86,
+                "device": "/dev/loop2",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 74,
+                "inode_used": 74,
+                "mount": "/snap/firmware-updater/127",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 11272192,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 2157,
+                "block_used": 2157,
+                "device": "/dev/loop3",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 819,
+                "inode_used": 819,
+                "mount": "/snap/firefox/4173",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 282722304,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 83,
+                "block_used": 83,
+                "device": "/dev/loop4",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 71,
+                "inode_used": 71,
+                "mount": "/snap/snap-store/1124",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 10878976,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 310,
+                "block_used": 310,
+                "device": "/dev/loop6",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 650,
+                "inode_used": 650,
+                "mount": "/snap/snapd/21465",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 40632320,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 734,
+                "block_used": 734,
+                "device": "/dev/loop7",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 76208,
+                "inode_used": 76208,
+                "mount": "/snap/gtk-common-themes/1535",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 96206848,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 4041,
+                "block_used": 4041,
+                "device": "/dev/loop5",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 20797,
+                "inode_used": 20797,
+                "mount": "/snap/gnome-42-2204/176",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 529661952,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 311,
+                "block_used": 311,
+                "device": "/dev/loop8",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 651,
+                "inode_used": 651,
+                "mount": "/snap/snapd/21759",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 40763392,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 2208000,
+                "block_size": 4096,
+                "block_total": 5115796,
+                "block_used": 2907796,
+                "device": "/dev/sda2",
+                "fstype": "ext4",
+                "inode_available": 1096905,
+                "inode_total": 1310720,
+                "inode_used": 213815,
+                "mount": "/var/snap/firefox/common/host-hunspell",
+                "options": "ro,noexec,noatime,bind",
+                "size_available": 9043968000,
+                "size_total": 20954300416,
+                "uuid": "b1bd9b24-5311-4d10-9488-6706cecee003"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 4,
+                "block_used": 4,
+                "device": "/dev/loop9",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 49,
+                "inode_used": 49,
+                "mount": "/snap/snapd-desktop-integration/157",
+                "options": "ro,nodev,relatime,errors=continue,threads=single",
+                "size_available": 0,
+                "size_total": 524288,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 2048,
+                "block_total": 2985672,
+                "block_used": 2985672,
+                "device": "/dev/sr0",
+                "fstype": "iso9660",
+                "inode_available": 0,
+                "inode_total": 0,
+                "inode_used": 0,
+                "mount": "/media/mohamed-keita/Ubuntu 24.04 LTS amd64",
+                "options": "ro,nosuid,nodev,relatime,nojoliet,check=s,map=n,blocksize=2048,uid=1000,gid=1000,dmode=500,fmode=400,iocharset=utf8",
+                "size_available": 0,
+                "size_total": 6114656256,
+                "uuid": "2024-04-24-11-29-09-00"
+            }
+        ],
+        "ansible_nodename": "mohamed-keita-VMware-Virtual-Platform",
+        "ansible_os_family": "Debian",
+        "ansible_pkg_mgr": "apt",
+        "ansible_proc_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-6.8.0-36-generic",
+            "quiet": true,
+            "ro": true,
+            "root": "UUID=b1bd9b24-5311-4d10-9488-6706cecee003",
+            "splash": true
+        },
+        "ansible_processor": [
+            "0",
+            "GenuineIntel",
+            "12th Gen Intel(R) Core(TM) i7-1255U",
+            "1",
+            "GenuineIntel",
+            "12th Gen Intel(R) Core(TM) i7-1255U"
+        ],
+        "ansible_processor_cores": 1,
+        "ansible_processor_count": 2,
+        "ansible_processor_nproc": 2,
+        "ansible_processor_threads_per_core": 1,
+        "ansible_processor_vcpus": 2,
+        "ansible_product_name": "VMware Virtual Platform",
+        "ansible_product_serial": "VMware-56 4d 09 23 0c 00 5f 04-97 32 d6 b8 6d d6 61 16",
+        "ansible_product_uuid": "23094d56-000c-045f-9732-d6b86dd66116",
+        "ansible_product_version": "None",
+        "ansible_python": {
+            "executable": "/usr/bin/python3",
+            "has_sslcontext": true,
+            "type": "cpython",
+            "version": {
+                "major": 3,
+                "micro": 3,
+                "minor": 12,
+                "releaselevel": "final",
+                "serial": 0
+            },
+            "version_info": [
+                3,
+                12,
+                3,
+                "final",
+                0
+            ]
+        },
+        "ansible_python_version": "3.12.3",
+        "ansible_real_group_id": 0,
+        "ansible_real_user_id": 0,
+        "ansible_selinux": {
+            "status": "disabled"
+        },
+        "ansible_selinux_python_present": true,
+        "ansible_service_mgr": "systemd",
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLKB5aMbrE5y+ewYqBwX2TfDp7TwvlgauOL+MA2RtvcwjlORV2hUVgzRhagt3XlrFFBf/+kfrWLd68MniVAaNo4=",
+        "ansible_ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256",
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIPiansPEQrL01eysVuFI+RwOKwshCGssr8vkc52jJGP7",
+        "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519",
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQCpc5HEprHluio3JRvH0azMn2u++t32pec7/u3ZEjPAnN9mWUfnS+kyHZupTU2//wEPv/O7gh2kOzD/C6XbfTiK58KLStXcXj8loUuu/bYGFG/X0q1AgrQzdCEWetG8wEt7xl43JPCGAf9SiPOfxMBJehSVdZifdH8kFhdildJ+lnmUfeVu+cb/DoTt1+T8hrQJ6ZbYgX6AfI/7Wyl9eOhSozY5v1cO5oUBAgU1vePqOZgKKh1KtNOhwZp8WWv5x9g0J/H660SHmkQ6TtYLFo+ShClV+EDA+IFuPUM8JM9D41mSCK47RdRH10NsgiEhUabUHSNcxIJ8Jx/EQ7gegH2xXGyNV7paHB5ELWNeNWaxSy6XoA0GHRoEnfAAPYgexIWOGjtaxdlo06hHUC+mQjBA7dnvERHcche3lDjw0msE4kSS/FhvPkH4qETMN1zGutTQVtJt25kStJPPf9YfseGHyt8ViV00xhlXI2oWJ/MBcoDF2THILHnOlgFey5ZBiCc=",
+        "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa",
+        "ansible_swapfree_mb": 3776,
+        "ansible_swaptotal_mb": 3776,
+        "ansible_system": "Linux",
+        "ansible_system_capabilities": [],
+        "ansible_system_capabilities_enforced": "False",
+        "ansible_system_vendor": "VMware, Inc.",
+        "ansible_uptime_seconds": 29015,
+        "ansible_user_dir": "/root",
+        "ansible_user_gecos": "root",
+        "ansible_user_gid": 0,
+        "ansible_user_id": "root",
+        "ansible_user_shell": "/bin/bash",
+        "ansible_user_uid": 0,
+        "ansible_userspace_architecture": "x86_64",
+        "ansible_userspace_bits": "64",
+        "ansible_virtualization_role": "guest",
+        "ansible_virtualization_tech_guest": [
+            "VMware"
+        ],
+        "ansible_virtualization_tech_host": [],
+        "ansible_virtualization_type": "VMware",
+        "discovered_interpreter_python": "/usr/bin/python3",
+        "gather_subset": [
+            "all"
+        ],
+        "module_setup": true
+    },
+    "changed": false
+}
+2024-07-13 15:41:02,091 p=20778 u=root n=ansible | ERROR! no module/action detected in task.
+
+The error appears to be in '/root/ansible_prod_playbook/play_prod1.yml': line 27, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+         state: started
+    - name: Install apache on ubuntu
+      ^ here
+
+2024-07-13 15:41:51,702 p=20783 u=root n=ansible | PLAY [all] **********************************************************************************************************************************************************************************
+2024-07-13 15:41:51,723 p=20783 u=root n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************
+2024-07-13 15:41:56,022 p=20783 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:41:56,491 p=20783 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:41:56,775 p=20783 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:41:56,865 p=20783 u=root n=ansible | TASK [Install nginx] ************************************************************************************************************************************************************************
+2024-07-13 15:41:56,992 p=20783 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 15:41:56,994 p=20783 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 15:41:57,018 p=20783 u=root n=ansible | skipping: [192.168.176.128]
+2024-07-13 15:41:57,039 p=20783 u=root n=ansible | TASK [Create user serge] ********************************************************************************************************************************************************************
+2024-07-13 15:41:58,859 p=20783 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:41:59,128 p=20783 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:41:59,217 p=20783 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:41:59,238 p=20783 u=root n=ansible | TASK [Create group] *************************************************************************************************************************************************************************
+2024-07-13 15:42:00,700 p=20783 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:42:00,972 p=20783 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:42:01,127 p=20783 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:42:01,147 p=20783 u=root n=ansible | TASK [Install httpd] ************************************************************************************************************************************************************************
+2024-07-13 15:42:04,879 p=20783 u=root n=ansible | fatal: [192.168.176.128]: FAILED! => {"cache_update_time": 1720886826, "cache_updated": false, "changed": false, "msg": "'/usr/bin/apt-get -y -o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"       install 'httpd'' failed: E: Package 'httpd' has no installation candidate\n", "rc": 100, "stderr": "E: Package 'httpd' has no installation candidate\n", "stderr_lines": ["E: Package 'httpd' has no installation candidate"], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nPackage httpd is a virtual package provided by:\n  apache2 2.4.58-1ubuntu8.3\n  yaws 2.1.1+dfsg-2\n  webfs 1.21+ds1-12build3\n  tntnet 3.0-3.1build1\n  mini-httpd 1.30-8build2\n  micro-httpd 20140814-2.1\n  merecat 2.31+git20220513+ds-4.1build2\n  lighttpd 1.4.74-1ubuntu3\n  nginx 1.24.0-2ubuntu7\n\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "Package httpd is a virtual package provided by:", "  apache2 2.4.58-1ubuntu8.3", "  yaws 2.1.1+dfsg-2", "  webfs 1.21+ds1-12build3", "  tntnet 3.0-3.1build1", "  mini-httpd 1.30-8build2", "  micro-httpd 20140814-2.1", "  merecat 2.31+git20220513+ds-4.1build2", "  lighttpd 1.4.74-1ubuntu3", "  nginx 1.24.0-2ubuntu7", ""]}
+2024-07-13 15:42:05,989 p=20783 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:42:08,572 p=20783 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:42:08,603 p=20783 u=root n=ansible | TASK [Start service httpd, if not started] **************************************************************************************************************************************************
+2024-07-13 15:42:11,349 p=20783 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 15:42:11,596 p=20783 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 15:42:11,614 p=20783 u=root n=ansible | TASK [Create index file] ********************************************************************************************************************************************************************
+2024-07-13 15:42:13,408 p=20783 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 15:42:13,533 p=20783 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 15:42:13,549 p=20783 u=root n=ansible | TASK [Create directory] *********************************************************************************************************************************************************************
+2024-07-13 15:42:15,152 p=20783 u=root n=ansible | fatal: [192.168.176.131]: FAILED! => {"changed": true, "cmd": "mkdir /tmp/os", "delta": "0:00:00.007751", "end": "2024-07-13 15:42:14.965278", "msg": "non-zero return code", "rc": 1, "start": "2024-07-13 15:42:14.957527", "stderr": "mkdir: cannot create directory ‘/tmp/os’: File exists", "stderr_lines": ["mkdir: cannot create directory ‘/tmp/os’: File exists"], "stdout": "", "stdout_lines": []}
+2024-07-13 15:42:15,271 p=20783 u=root n=ansible | fatal: [192.168.176.133]: FAILED! => {"changed": true, "cmd": "mkdir /tmp/os", "delta": "0:00:00.020673", "end": "2024-07-13 15:42:15.068235", "msg": "non-zero return code", "rc": 1, "start": "2024-07-13 15:42:15.047562", "stderr": "mkdir: cannot create directory ‘/tmp/os’: File exists", "stderr_lines": ["mkdir: cannot create directory ‘/tmp/os’: File exists"], "stdout": "", "stdout_lines": []}
+2024-07-13 15:42:15,278 p=20783 u=root n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************
+2024-07-13 15:42:15,279 p=20783 u=root n=ansible | 192.168.176.128            : ok=3    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-07-13 15:42:15,280 p=20783 u=root n=ansible | 192.168.176.131            : ok=6    changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-07-13 15:42:15,281 p=20783 u=root n=ansible | 192.168.176.133            : ok=6    changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-07-13 15:49:08,409 p=20985 u=root n=ansible | PLAY [all] **********************************************************************************************************************************************************************************
+2024-07-13 15:49:08,430 p=20985 u=root n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************
+2024-07-13 15:49:12,609 p=20985 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:49:13,111 p=20985 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:49:13,315 p=20985 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:49:13,404 p=20985 u=root n=ansible | TASK [Install nginx] ************************************************************************************************************************************************************************
+2024-07-13 15:49:13,539 p=20985 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 15:49:13,542 p=20985 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 15:49:13,563 p=20985 u=root n=ansible | skipping: [192.168.176.128]
+2024-07-13 15:49:13,584 p=20985 u=root n=ansible | TASK [Create user serge] ********************************************************************************************************************************************************************
+2024-07-13 15:49:15,303 p=20985 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:49:15,633 p=20985 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:49:15,768 p=20985 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:49:15,790 p=20985 u=root n=ansible | TASK [Create group] *************************************************************************************************************************************************************************
+2024-07-13 15:49:17,313 p=20985 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:49:17,635 p=20985 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:49:17,796 p=20985 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:49:17,815 p=20985 u=root n=ansible | TASK [Install httpd] ************************************************************************************************************************************************************************
+2024-07-13 15:49:17,943 p=20985 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 15:49:17,946 p=20985 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 15:49:20,940 p=20985 u=root n=ansible | fatal: [192.168.176.128]: FAILED! => {"cache_update_time": 1720886826, "cache_updated": false, "changed": false, "msg": "'/usr/bin/apt-get -y -o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"       install 'httpd'' failed: E: Package 'httpd' has no installation candidate\n", "rc": 100, "stderr": "E: Package 'httpd' has no installation candidate\n", "stderr_lines": ["E: Package 'httpd' has no installation candidate"], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nPackage httpd is a virtual package provided by:\n  apache2 2.4.58-1ubuntu8.3\n  yaws 2.1.1+dfsg-2\n  webfs 1.21+ds1-12build3\n  tntnet 3.0-3.1build1\n  mini-httpd 1.30-8build2\n  micro-httpd 20140814-2.1\n  merecat 2.31+git20220513+ds-4.1build2\n  lighttpd 1.4.74-1ubuntu3\n  nginx 1.24.0-2ubuntu7\n\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "Package httpd is a virtual package provided by:", "  apache2 2.4.58-1ubuntu8.3", "  yaws 2.1.1+dfsg-2", "  webfs 1.21+ds1-12build3", "  tntnet 3.0-3.1build1", "  mini-httpd 1.30-8build2", "  micro-httpd 20140814-2.1", "  merecat 2.31+git20220513+ds-4.1build2", "  lighttpd 1.4.74-1ubuntu3", "  nginx 1.24.0-2ubuntu7", ""]}
+2024-07-13 15:49:20,961 p=20985 u=root n=ansible | TASK [Start service httpd, if not started] **************************************************************************************************************************************************
+2024-07-13 15:49:23,470 p=20985 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:49:23,639 p=20985 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:49:23,661 p=20985 u=root n=ansible | TASK [Create index file] ********************************************************************************************************************************************************************
+2024-07-13 15:49:25,466 p=20985 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 15:49:25,605 p=20985 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 15:49:25,625 p=20985 u=root n=ansible | TASK [Create directory] *********************************************************************************************************************************************************************
+2024-07-13 15:49:27,436 p=20985 u=root n=ansible | fatal: [192.168.176.131]: FAILED! => {"changed": true, "cmd": "mkdir /tmp/os", "delta": "0:00:00.010299", "end": "2024-07-13 15:49:27.236705", "msg": "non-zero return code", "rc": 1, "start": "2024-07-13 15:49:27.226406", "stderr": "mkdir: cannot create directory ‘/tmp/os’: File exists", "stderr_lines": ["mkdir: cannot create directory ‘/tmp/os’: File exists"], "stdout": "", "stdout_lines": []}
+2024-07-13 15:49:27,535 p=20985 u=root n=ansible | fatal: [192.168.176.133]: FAILED! => {"changed": true, "cmd": "mkdir /tmp/os", "delta": "0:00:00.019928", "end": "2024-07-13 15:49:27.348796", "msg": "non-zero return code", "rc": 1, "start": "2024-07-13 15:49:27.328868", "stderr": "mkdir: cannot create directory ‘/tmp/os’: File exists", "stderr_lines": ["mkdir: cannot create directory ‘/tmp/os’: File exists"], "stdout": "", "stdout_lines": []}
+2024-07-13 15:49:27,538 p=20985 u=root n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************
+2024-07-13 15:49:27,538 p=20985 u=root n=ansible | 192.168.176.128            : ok=3    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-07-13 15:49:27,539 p=20985 u=root n=ansible | 192.168.176.131            : ok=5    changed=1    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2024-07-13 15:49:27,539 p=20985 u=root n=ansible | 192.168.176.133            : ok=5    changed=1    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2024-07-13 15:52:26,885 p=21162 u=root n=ansible | PLAY [all] **********************************************************************************************************************************************************************************
+2024-07-13 15:52:26,907 p=21162 u=root n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************
+2024-07-13 15:52:30,800 p=21162 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:52:31,228 p=21162 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:52:31,634 p=21162 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:52:31,719 p=21162 u=root n=ansible | TASK [Install nginx] ************************************************************************************************************************************************************************
+2024-07-13 15:52:34,791 p=21162 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:52:37,068 p=21162 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:52:38,536 p=21162 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:52:38,562 p=21162 u=root n=ansible | TASK [Create user serge] ********************************************************************************************************************************************************************
+2024-07-13 15:52:40,347 p=21162 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:52:40,622 p=21162 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:52:40,835 p=21162 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:52:40,858 p=21162 u=root n=ansible | TASK [Create group] *************************************************************************************************************************************************************************
+2024-07-13 15:52:42,481 p=21162 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:52:42,808 p=21162 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:52:42,979 p=21162 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:52:42,999 p=21162 u=root n=ansible | TASK [Install httpd] ************************************************************************************************************************************************************************
+2024-07-13 15:52:46,299 p=21162 u=root n=ansible | fatal: [192.168.176.128]: FAILED! => {"cache_update_time": 1720886826, "cache_updated": false, "changed": false, "msg": "'/usr/bin/apt-get -y -o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"       install 'httpd'' failed: E: Package 'httpd' has no installation candidate\n", "rc": 100, "stderr": "E: Package 'httpd' has no installation candidate\n", "stderr_lines": ["E: Package 'httpd' has no installation candidate"], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nPackage httpd is a virtual package provided by:\n  apache2 2.4.58-1ubuntu8.3\n  yaws 2.1.1+dfsg-2\n  webfs 1.21+ds1-12build3\n  tntnet 3.0-3.1build1\n  mini-httpd 1.30-8build2\n  micro-httpd 20140814-2.1\n  merecat 2.31+git20220513+ds-4.1build2\n  lighttpd 1.4.74-1ubuntu3\n  nginx 1.24.0-2ubuntu7\n\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "Package httpd is a virtual package provided by:", "  apache2 2.4.58-1ubuntu8.3", "  yaws 2.1.1+dfsg-2", "  webfs 1.21+ds1-12build3", "  tntnet 3.0-3.1build1", "  mini-httpd 1.30-8build2", "  micro-httpd 20140814-2.1", "  merecat 2.31+git20220513+ds-4.1build2", "  lighttpd 1.4.74-1ubuntu3", "  nginx 1.24.0-2ubuntu7", ""]}
+2024-07-13 15:52:47,124 p=21162 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:52:48,857 p=21162 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:52:48,878 p=21162 u=root n=ansible | TASK [Install apache2 on ubuntu server] *****************************************************************************************************************************************************
+2024-07-13 15:52:48,950 p=21162 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 15:52:48,976 p=21162 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 15:52:48,998 p=21162 u=root n=ansible | TASK [Start service httpd, if not started] **************************************************************************************************************************************************
+2024-07-13 15:52:51,546 p=21162 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:52:51,805 p=21162 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:52:51,825 p=21162 u=root n=ansible | TASK [Create index file] ********************************************************************************************************************************************************************
+2024-07-13 15:52:53,610 p=21162 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 15:52:53,759 p=21162 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 15:52:53,781 p=21162 u=root n=ansible | TASK [Create directory] *********************************************************************************************************************************************************************
+2024-07-13 15:52:55,659 p=21162 u=root n=ansible | fatal: [192.168.176.131]: FAILED! => {"changed": true, "cmd": "mkdir /tmp/os", "delta": "0:00:00.010391", "end": "2024-07-13 15:52:55.346487", "msg": "non-zero return code", "rc": 1, "start": "2024-07-13 15:52:55.336096", "stderr": "mkdir: cannot create directory ‘/tmp/os’: File exists", "stderr_lines": ["mkdir: cannot create directory ‘/tmp/os’: File exists"], "stdout": "", "stdout_lines": []}
+2024-07-13 15:52:55,732 p=21162 u=root n=ansible | fatal: [192.168.176.133]: FAILED! => {"changed": true, "cmd": "mkdir /tmp/os", "delta": "0:00:00.013811", "end": "2024-07-13 15:52:55.533319", "msg": "non-zero return code", "rc": 1, "start": "2024-07-13 15:52:55.519508", "stderr": "mkdir: cannot create directory ‘/tmp/os’: File exists", "stderr_lines": ["mkdir: cannot create directory ‘/tmp/os’: File exists"], "stdout": "", "stdout_lines": []}
+2024-07-13 15:52:55,740 p=21162 u=root n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************
+2024-07-13 15:52:55,741 p=21162 u=root n=ansible | 192.168.176.128            : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-07-13 15:52:55,742 p=21162 u=root n=ansible | 192.168.176.131            : ok=7    changed=1    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-07-13 15:52:55,743 p=21162 u=root n=ansible | 192.168.176.133            : ok=7    changed=1    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-07-13 15:58:13,785 p=21377 u=root n=ansible | PLAY [all] **********************************************************************************************************************************************************************************
+2024-07-13 15:58:13,807 p=21377 u=root n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************
+2024-07-13 15:58:17,878 p=21377 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:58:18,314 p=21377 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:58:18,648 p=21377 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:58:18,737 p=21377 u=root n=ansible | TASK [Install nginx] ************************************************************************************************************************************************************************
+2024-07-13 15:58:18,870 p=21377 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 15:58:18,872 p=21377 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 15:58:18,892 p=21377 u=root n=ansible | skipping: [192.168.176.128]
+2024-07-13 15:58:18,914 p=21377 u=root n=ansible | TASK [Create user serge] ********************************************************************************************************************************************************************
+2024-07-13 15:58:20,677 p=21377 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:58:20,963 p=21377 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:58:21,028 p=21377 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:58:21,052 p=21377 u=root n=ansible | TASK [Create group] *************************************************************************************************************************************************************************
+2024-07-13 15:58:22,601 p=21377 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 15:58:22,916 p=21377 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:58:23,058 p=21377 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:58:23,078 p=21377 u=root n=ansible | TASK [Install httpd] ************************************************************************************************************************************************************************
+2024-07-13 15:58:26,674 p=21377 u=root n=ansible | fatal: [192.168.176.128]: FAILED! => {"cache_update_time": 1720886826, "cache_updated": false, "changed": false, "msg": "'/usr/bin/apt-get -y -o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"       install 'httpd'' failed: E: Package 'httpd' has no installation candidate\n", "rc": 100, "stderr": "E: Package 'httpd' has no installation candidate\n", "stderr_lines": ["E: Package 'httpd' has no installation candidate"], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nPackage httpd is a virtual package provided by:\n  apache2 2.4.58-1ubuntu8.3\n  yaws 2.1.1+dfsg-2\n  webfs 1.21+ds1-12build3\n  tntnet 3.0-3.1build1\n  mini-httpd 1.30-8build2\n  micro-httpd 20140814-2.1\n  merecat 2.31+git20220513+ds-4.1build2\n  lighttpd 1.4.74-1ubuntu3\n  nginx 1.24.0-2ubuntu7\n\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "Package httpd is a virtual package provided by:", "  apache2 2.4.58-1ubuntu8.3", "  yaws 2.1.1+dfsg-2", "  webfs 1.21+ds1-12build3", "  tntnet 3.0-3.1build1", "  mini-httpd 1.30-8build2", "  micro-httpd 20140814-2.1", "  merecat 2.31+git20220513+ds-4.1build2", "  lighttpd 1.4.74-1ubuntu3", "  nginx 1.24.0-2ubuntu7", ""]}
+2024-07-13 15:58:27,820 p=21377 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:58:29,860 p=21377 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:58:29,884 p=21377 u=root n=ansible | TASK [Install apache2 on ubuntu server] *****************************************************************************************************************************************************
+2024-07-13 15:58:29,953 p=21377 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 15:58:29,981 p=21377 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 15:58:30,003 p=21377 u=root n=ansible | TASK [Start service httpd, if not started] **************************************************************************************************************************************************
+2024-07-13 15:58:32,482 p=21377 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 15:58:32,643 p=21377 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 15:58:32,662 p=21377 u=root n=ansible | TASK [Create index file] ********************************************************************************************************************************************************************
+2024-07-13 15:58:34,434 p=21377 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 15:58:34,618 p=21377 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 15:58:34,637 p=21377 u=root n=ansible | TASK [Create directory] *********************************************************************************************************************************************************************
+2024-07-13 15:58:36,366 p=21377 u=root n=ansible | fatal: [192.168.176.131]: FAILED! => {"changed": true, "cmd": "mkdir /tmp/os", "delta": "0:00:00.010247", "end": "2024-07-13 15:58:36.167891", "msg": "non-zero return code", "rc": 1, "start": "2024-07-13 15:58:36.157644", "stderr": "mkdir: cannot create directory ‘/tmp/os’: File exists", "stderr_lines": ["mkdir: cannot create directory ‘/tmp/os’: File exists"], "stdout": "", "stdout_lines": []}
+2024-07-13 15:58:36,519 p=21377 u=root n=ansible | fatal: [192.168.176.133]: FAILED! => {"changed": true, "cmd": "mkdir /tmp/os", "delta": "0:00:00.014120", "end": "2024-07-13 15:58:36.326640", "msg": "non-zero return code", "rc": 1, "start": "2024-07-13 15:58:36.312520", "stderr": "mkdir: cannot create directory ‘/tmp/os’: File exists", "stderr_lines": ["mkdir: cannot create directory ‘/tmp/os’: File exists"], "stdout": "", "stdout_lines": []}
+2024-07-13 15:58:36,523 p=21377 u=root n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************
+2024-07-13 15:58:36,524 p=21377 u=root n=ansible | 192.168.176.128            : ok=3    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-07-13 15:58:36,525 p=21377 u=root n=ansible | 192.168.176.131            : ok=6    changed=1    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2024-07-13 15:58:36,525 p=21377 u=root n=ansible | 192.168.176.133            : ok=6    changed=1    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2024-07-13 16:00:58,997 p=21571 u=root n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/root/ansible_prod_playbook/play_prod1.yml': line 22, column 37, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        state: present
+      when: ansible_os_family== when: ansible_os_family=="Redhat"
+                                    ^ here
+
+2024-07-13 16:01:51,449 p=21599 u=root n=ansible | PLAY [all] **********************************************************************************************************************************************************************************
+2024-07-13 16:01:51,469 p=21599 u=root n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************
+2024-07-13 16:01:55,609 p=21599 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:01:56,150 p=21599 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:01:56,444 p=21599 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:01:56,532 p=21599 u=root n=ansible | TASK [Install nginx] ************************************************************************************************************************************************************************
+2024-07-13 16:01:59,505 p=21599 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:02:00,931 p=21599 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:02:03,075 p=21599 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:02:03,098 p=21599 u=root n=ansible | TASK [Create user serge] ********************************************************************************************************************************************************************
+2024-07-13 16:02:04,826 p=21599 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:02:05,180 p=21599 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:02:05,320 p=21599 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:02:05,341 p=21599 u=root n=ansible | TASK [Create group] *************************************************************************************************************************************************************************
+2024-07-13 16:02:06,832 p=21599 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:02:07,201 p=21599 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:02:07,334 p=21599 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:02:07,357 p=21599 u=root n=ansible | TASK [Install httpd] ************************************************************************************************************************************************************************
+2024-07-13 16:02:07,493 p=21599 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 16:02:07,495 p=21599 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 16:02:07,519 p=21599 u=root n=ansible | skipping: [192.168.176.128]
+2024-07-13 16:02:07,536 p=21599 u=root n=ansible | TASK [Install apache2 on ubuntu server] *****************************************************************************************************************************************************
+2024-07-13 16:02:07,672 p=21599 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 16:02:07,675 p=21599 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 16:02:27,467 p=21599 u=root n=ansible | changed: [192.168.176.128]
+2024-07-13 16:02:27,486 p=21599 u=root n=ansible | TASK [Start service httpd, if not started] **************************************************************************************************************************************************
+2024-07-13 16:02:29,783 p=21599 u=root n=ansible | fatal: [192.168.176.128]: FAILED! => {"changed": false, "msg": "Could not find the requested service httpd: host"}
+2024-07-13 16:02:30,061 p=21599 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:02:30,254 p=21599 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:02:30,275 p=21599 u=root n=ansible | TASK [Create index file] ********************************************************************************************************************************************************************
+2024-07-13 16:02:32,062 p=21599 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 16:02:32,217 p=21599 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 16:02:32,238 p=21599 u=root n=ansible | TASK [Create directory] *********************************************************************************************************************************************************************
+2024-07-13 16:02:34,005 p=21599 u=root n=ansible | fatal: [192.168.176.131]: FAILED! => {"changed": true, "cmd": "mkdir /tmp/os", "delta": "0:00:00.010610", "end": "2024-07-13 16:02:33.814734", "msg": "non-zero return code", "rc": 1, "start": "2024-07-13 16:02:33.804124", "stderr": "mkdir: cannot create directory ‘/tmp/os’: File exists", "stderr_lines": ["mkdir: cannot create directory ‘/tmp/os’: File exists"], "stdout": "", "stdout_lines": []}
+2024-07-13 16:02:34,158 p=21599 u=root n=ansible | fatal: [192.168.176.133]: FAILED! => {"changed": true, "cmd": "mkdir /tmp/os", "delta": "0:00:00.012818", "end": "2024-07-13 16:02:33.964317", "msg": "non-zero return code", "rc": 1, "start": "2024-07-13 16:02:33.951499", "stderr": "mkdir: cannot create directory ‘/tmp/os’: File exists", "stderr_lines": ["mkdir: cannot create directory ‘/tmp/os’: File exists"], "stdout": "", "stdout_lines": []}
+2024-07-13 16:02:34,165 p=21599 u=root n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************
+2024-07-13 16:02:34,166 p=21599 u=root n=ansible | 192.168.176.128            : ok=5    changed=1    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-07-13 16:02:34,167 p=21599 u=root n=ansible | 192.168.176.131            : ok=6    changed=1    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2024-07-13 16:02:34,167 p=21599 u=root n=ansible | 192.168.176.133            : ok=6    changed=1    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2024-07-13 16:27:26,981 p=21932 u=root n=ansible | playbook: play_prod1.yml
+2024-07-13 16:38:59,557 p=22188 u=root n=ansible | PLAY [all] **********************************************************************************************************************************************************************************
+2024-07-13 16:38:59,584 p=22188 u=root n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************
+2024-07-13 16:39:04,155 p=22188 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:39:04,605 p=22188 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:39:04,878 p=22188 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:39:04,968 p=22188 u=root n=ansible | TASK [Install nginx] ************************************************************************************************************************************************************************
+2024-07-13 16:39:08,029 p=22188 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:39:09,634 p=22188 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:39:11,917 p=22188 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:39:11,940 p=22188 u=root n=ansible | TASK [Create user serge] ********************************************************************************************************************************************************************
+2024-07-13 16:39:13,731 p=22188 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:39:13,994 p=22188 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:39:14,151 p=22188 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:39:14,167 p=22188 u=root n=ansible | TASK [Create group] *************************************************************************************************************************************************************************
+2024-07-13 16:39:15,712 p=22188 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:39:15,997 p=22188 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:39:16,164 p=22188 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:39:16,181 p=22188 u=root n=ansible | TASK [Install httpd] ************************************************************************************************************************************************************************
+2024-07-13 16:39:16,311 p=22188 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 16:39:16,317 p=22188 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 16:39:16,337 p=22188 u=root n=ansible | skipping: [192.168.176.128]
+2024-07-13 16:39:16,357 p=22188 u=root n=ansible | TASK [Install apache2 on ubuntu server] *****************************************************************************************************************************************************
+2024-07-13 16:39:16,498 p=22188 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 16:39:16,502 p=22188 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 16:39:18,576 p=22188 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:39:18,593 p=22188 u=root n=ansible | TASK [Start service httpd, if not started] **************************************************************************************************************************************************
+2024-07-13 16:39:21,051 p=22188 u=root n=ansible | fatal: [192.168.176.128]: FAILED! => {"changed": false, "msg": "Could not find the requested service httpd: host"}
+2024-07-13 16:39:21,245 p=22188 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:39:21,439 p=22188 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:39:21,460 p=22188 u=root n=ansible | TASK [Create index file] ********************************************************************************************************************************************************************
+2024-07-13 16:39:23,243 p=22188 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 16:39:23,409 p=22188 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 16:39:23,425 p=22188 u=root n=ansible | TASK [Create directory] *********************************************************************************************************************************************************************
+2024-07-13 16:39:24,819 p=22188 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:39:24,986 p=22188 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:39:25,079 p=22188 u=root n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************
+2024-07-13 16:39:25,080 p=22188 u=root n=ansible | 192.168.176.128            : ok=5    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-07-13 16:39:25,081 p=22188 u=root n=ansible | 192.168.176.131            : ok=7    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2024-07-13 16:39:25,081 p=22188 u=root n=ansible | 192.168.176.133            : ok=7    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2024-07-13 16:41:58,961 p=22400 u=root n=ansible | PLAY [all] **********************************************************************************************************************************************************************************
+2024-07-13 16:41:58,983 p=22400 u=root n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************
+2024-07-13 16:42:02,891 p=22400 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:42:03,432 p=22400 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:42:03,572 p=22400 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:42:03,659 p=22400 u=root n=ansible | TASK [Install nginx] ************************************************************************************************************************************************************************
+2024-07-13 16:42:06,560 p=22400 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:42:08,086 p=22400 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:42:10,282 p=22400 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:42:10,298 p=22400 u=root n=ansible | TASK [Create user serge] ********************************************************************************************************************************************************************
+2024-07-13 16:42:12,072 p=22400 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:42:12,345 p=22400 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:42:12,475 p=22400 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:42:12,490 p=22400 u=root n=ansible | TASK [Create group] *************************************************************************************************************************************************************************
+2024-07-13 16:42:14,053 p=22400 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:42:14,311 p=22400 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:42:14,481 p=22400 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:42:14,503 p=22400 u=root n=ansible | TASK [Install httpd] ************************************************************************************************************************************************************************
+2024-07-13 16:42:14,632 p=22400 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 16:42:14,634 p=22400 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 16:42:14,658 p=22400 u=root n=ansible | skipping: [192.168.176.128]
+2024-07-13 16:42:14,679 p=22400 u=root n=ansible | TASK [Install apache2 on ubuntu server] *****************************************************************************************************************************************************
+2024-07-13 16:42:14,806 p=22400 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 16:42:14,808 p=22400 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 16:42:16,856 p=22400 u=root n=ansible | ok: [192.168.176.128]
+2024-07-13 16:42:16,878 p=22400 u=root n=ansible | TASK [Start service httpd, if not started] **************************************************************************************************************************************************
+2024-07-13 16:42:17,008 p=22400 u=root n=ansible | skipping: [192.168.176.131]
+2024-07-13 16:42:17,011 p=22400 u=root n=ansible | skipping: [192.168.176.133]
+2024-07-13 16:42:17,040 p=22400 u=root n=ansible | skipping: [192.168.176.128]
+2024-07-13 16:42:17,061 p=22400 u=root n=ansible | TASK [Create index file] ********************************************************************************************************************************************************************
+2024-07-13 16:42:18,585 p=22400 u=root n=ansible | changed: [192.168.176.128]
+2024-07-13 16:42:18,817 p=22400 u=root n=ansible | changed: [192.168.176.131]
+2024-07-13 16:42:18,988 p=22400 u=root n=ansible | changed: [192.168.176.133]
+2024-07-13 16:42:19,009 p=22400 u=root n=ansible | TASK [Create directory] *********************************************************************************************************************************************************************
+2024-07-13 16:42:20,218 p=22400 u=root n=ansible | changed: [192.168.176.128]
+2024-07-13 16:42:20,482 p=22400 u=root n=ansible | ok: [192.168.176.131]
+2024-07-13 16:42:20,719 p=22400 u=root n=ansible | ok: [192.168.176.133]
+2024-07-13 16:42:20,853 p=22400 u=root n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************
+2024-07-13 16:42:20,854 p=22400 u=root n=ansible | 192.168.176.128            : ok=7    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2024-07-13 16:42:20,855 p=22400 u=root n=ansible | 192.168.176.131            : ok=6    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2024-07-13 16:42:20,855 p=22400 u=root n=ansible | 192.168.176.133            : ok=6    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   

@@ -1,0 +1,30 @@
+---
+- hosts: all
+  become: 1
+  gather_facts: 1
+  vars:
+    user_name: serge
+    group: Dev-teams
+  vars_files:
+    - variables.yml
+
+
+  tasks:
+    - name: check server uptime
+      command: "{{my_command}}"
+      register: system_uptime
+    - name: list directory
+      shell: ls
+    - name: check the kernel version
+      command: uname -r
+      register: kernel_output
+    - name: create user
+      user:
+        name: "{{user_name}}"
+
+    - name: create group
+      group:
+        name: "{{group}}"
+    - name: Read data
+      debug:
+        var: system_uptime.stdout[:19]
