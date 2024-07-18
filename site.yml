@@ -4,12 +4,14 @@
   tasks:
 
   - name: install update (Ubuntu)
+    tags: always
     apt:
       upgrade: dist 
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
 
   - name: install update (Redhat)
+    tags: always
     yum:
       update_only: yes
       update_cache: yes
@@ -29,18 +31,29 @@
 
 
   - name: install apache and php for Redhat servers
-    dnf:
+    tags: apache,centos,httpd
+    yum:
       name:
         - httpd
         - php
       state: latest
     when: ansible_distribution == "Redhat"
+
+  - name: copy default html file for site
+    tags: apache,apache2,httpd
+    copy:
+      src: default_site.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
   
 - hosts: webserver
   become: true
   tasks:
 
   - name: install mariadb package (RedHat)
+    tags: apache,apache2,webserver
     yum:
       name: mariadb
       state: latest
