@@ -29,18 +29,8 @@
   become: true 
   tasks:
   - name: install unzip
-    apt: 
+    yum: 
       name: unzip
-    
-  - name: install terraform
-    unarchive:
-      src: https://releases.hashicorp.com/terraform/1.9.2/terraform_1.9.2_linux_amd64.zip
-      dest: /usr/local/bin
-      remote_src: yes
-      mode: 0644
-      owner: root
-      group: root
-    when: ansibel_distribution == "Ubuntu"
 
 - hosts: webserver
   become: true
