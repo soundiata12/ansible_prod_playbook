@@ -15,7 +15,7 @@
     yum:
       update_only: yes
       update_cache: yes
-    when: ansible_distribution == "RedHat"
+    when: ansible_distribution == "RedHat, Rocky"
 
   - name: install apache and libapche-mod-php
     apt:
@@ -43,8 +43,42 @@
       name:
         - httpd
         - php
+        - curl
+        - nfs-utils
       state: latest
-    when: ansible_distribution == "Redhat"
+    when: ansible_distribution == "Rocky Redhat"
+
+- hosts: all 
+  become: true
+  tasks:
+
+  - name: Create user simone on all target servers
+    user:
+      name: simone
+      group: root
+  
+  - name: add ssh key for simone
+    authorized_key:
+      user: simone
+      state: present
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ9y3vl7OLkIgzIqnpGkbj8Lod2mPpYlh/Aux0TFxwmi ansible_controller_key"
+
+  - name: add sudoers file for simone
+    copy: 
+      src: sudoer_simone
+      dest: /etc/sudoers.d/simone
+      owner: root
+      group: root
+      mode: 0440
+
+
+
+  - name: start httpd (Rocky Redhat)
+    tags: apache,Redhat,httpd
+    service:
+      name: httpd
+      state: started
+    when: ansible_distribution == "Rocky Redhat"
 
   - name: copy default html file for site
     tags: apache,apache2,httpd
@@ -64,7 +98,7 @@
     yum:
       name: mariadb
       state: latest
-    when: ansible_distribution == "RedHat"
+    when: ansible_distribution == "RedHat, Rocky"
 
   - name: install mariadb package (Ubuntu)
     apt:
@@ -76,4 +110,128 @@
     package:
       name: samba
       state: latest
+  
+  tasks:
+
+  - name: Create user simone on all target servers
+    user:
+      name: simone
+      group: root
+
+  - name: add ssh key for simone
+    authorized_key:
+      user: simone
+      state: present
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ9y3vl7OLkIgzIqnpGkbj8Lod2mPpYlh/Aux0TFxwmi ansible_controller_key"
+
+  - name: add sudoers file for simone
+    copy:
+      src: sudoer_simone
+      dest: /etc/sudoers.d/simone
+      owner: root
+      group: root
+      mode: 0440
+
+
+
+  - name: start httpd (Rocky Redhat)
+    tags: apache,Redhat,httpd
+    service:
+      name: httpd
+      state: started
+    when: ansible_distribution == "Rocky Redhat"
+
+  - name: copy default html file for site
+    tags: apache,apache2,httpd
+    copy:
+      src: default_site.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
+
+- hosts: webserver
+  become: true
+  tasks:
+
+  - name: install mariadb package (RedHat)
+    tags: apache,apache2,webserver
+    yum:
+      name: mariadb
+      state: latest
+    when: ansible_distribution == "RedHat, Rocky"
+
+  - name: install mariadb package (Ubuntu)
+    apt:
+      name: mariadb-server
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+  - name: install samba package
+    package:
+      name: samba
+      state: latest
+
+
+  tasks:
+
+  - name: Create user simone on all target servers
+    user:
+      name: simone
+      group: root
+
+  - name: add ssh key for simone
+    authorized_key:
+      user: simone
+      state: present
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ9y3vl7OLkIgzIqnpGkbj8Lod2mPpYlh/Aux0TFxwmi ansible_controller_key"
+
+  - name: add sudoers file for simone
+    copy:
+      src: sudoer_simone
+      dest: /etc/sudoers.d/simone
+      owner: root
+      group: root
+      mode: 0440
+
+
+
+  - name: start httpd (Rocky Redhat)
+    tags: apache,Redhat,httpd
+    service:
+      name: httpd
+      state: started
+    when: ansible_distribution == "Rocky Redhat"
+
+  - name: copy default html file for site
+    tags: apache,apache2,httpd
+    copy:
+      src: default_site.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
+
+- hosts: webserver
+  become: true
+  tasks:
+
+  - name: install mariadb package (RedHat)
+    tags: apache,apache2,webserver
+    yum:
+      name: mariadb
+      state: latest
+    when: ansible_distribution == "RedHat, Rocky"
+
+  - name: install mariadb package (Ubuntu)
+    apt:
+      name: mariadb-server
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+  - name: install samba package
+    package:
+      name: samba
+      state: latest
+
 
